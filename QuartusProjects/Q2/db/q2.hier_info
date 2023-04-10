@@ -1,0 +1,60 @@
+|q2
+x1 => term1:MyTerm1.a
+x1 => term2:MyTerm2.a
+x1 => term3:MyTerm3.a
+x1 => term5:MyTerm5.a
+x2 => term2:MyTerm2.b
+x2 => term3:MyTerm3.b
+x2 => term4:MyTerm4.b
+x3 => term1:MyTerm1.c
+x3 => term2:MyTerm2.c
+x3 => term3:MyTerm3.c
+x3 => term5:MyTerm5.c
+x4 => term1:MyTerm1.d
+x4 => term4:MyTerm4.d
+x4 => term5:MyTerm5.d
+x5 => term2:MyTerm2.e
+x5 => term3:MyTerm3.e
+x5 => term4:MyTerm4.e
+x5 => term5:MyTerm5.e
+f <= f.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|q2|term1:MyTerm1
+a => t1.IN0
+c => t1.IN1
+d => t1.IN1
+t1 <= t1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|q2|term2:MyTerm2
+a => t2.IN0
+b => t2.IN1
+c => t2.IN1
+e => t2.IN1
+t2 <= t2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|q2|term3:MyTerm3
+a => t3.IN0
+b => t3.IN1
+c => t3.IN1
+e => t3.IN1
+t3 <= t3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|q2|term4:MyTerm4
+b => t4.IN0
+d => t4.IN1
+e => t4.IN1
+t4 <= t4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|q2|term5:MyTerm5
+a => t5.IN0
+c => t5.IN1
+d => t5.IN1
+e => t5.IN1
+t5 <= t5.DB_MAX_OUTPUT_PORT_TYPE
+
+

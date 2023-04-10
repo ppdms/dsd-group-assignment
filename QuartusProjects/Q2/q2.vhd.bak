@@ -1,0 +1,24 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+library work;
+use work.mycomponents.all;
+
+entity lab1structural is
+	port (
+		x1, x2, x3 : in std_logic;
+		f : out std_logic );
+end lab1structural;
+
+architecture structural of lab1structural is
+	signal t1out, t2out, t3out : std_logic;
+begin
+	MyTerm1: term1
+	port map (x1, x3, t1out);
+	MyTerm2: term2
+	port map (x1, x3, t2out);
+	MyTerm3: term3
+	port map (x2, x3, t3out);
+	f <= t1out or t2out or t3out;
+end structural;
+	

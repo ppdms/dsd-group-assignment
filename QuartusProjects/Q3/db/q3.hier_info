@@ -1,0 +1,15 @@
+|q3
+f <= finalsum.DB_MAX_OUTPUT_PORT_TYPE
+x1 => not1.IN0
+x1 => term3.IN0
+x2 => not2.IN0
+x2 => term2.IN1
+x3 => not3.IN0
+x3 => term2.IN2
+x5 => not5.IN0
+x5 => term3.IN3
+x5 => term5.IN2
+x4 => term3.IN2
+x4 => not4.IN0
+
+

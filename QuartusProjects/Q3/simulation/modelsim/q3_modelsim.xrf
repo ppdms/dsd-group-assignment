@@ -1,0 +1,14 @@
+vendor_name = ModelSim
+source_file = 1, C:/QuartusProjects/Q3/q3.bdf
+source_file = 1, C:/QuartusProjects/Q3/Waveform.vwf
+source_file = 1, C:/QuartusProjects/Q3/db/q3.cbx.xml
+design_name = q3
+instance = comp, \x1~I\, x1, q3, 1
+instance = comp, \x2~I\, x2, q3, 1
+instance = comp, \x5~I\, x5, q3, 1
+instance = comp, \x3~I\, x3, q3, 1
+instance = comp, \finalsum~1\, finalsum~1, q3, 1
+instance = comp, \finalsum~0\, finalsum~0, q3, 1
+instance = comp, \x4~I\, x4, q3, 1
+instance = comp, \finalsum~2\, finalsum~2, q3, 1
+instance = comp, \f~I\, f, q3, 1

@@ -1,0 +1,58 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+package mycomponents is
+	component term1 is
+		port (a : in std_logic;
+				c : in std_logic;
+				t1 : out std_logic);
+	end component;
+
+	component term2 is
+		port (a : in std_logic;
+				c : in std_logic;
+				t2 : out std_logic);
+	end component;
+
+	component term3 is
+		port (b : in std_logic;
+				c : in std_logic;
+				t3 : out std_logic);
+	end component;
+end package mycomponents;
+
+library ieee;
+use ieee.std_logic_1164.all;
+entity term1 is
+	port (a : in std_logic;
+			c : in std_logic;
+			t1 : out std_logic);
+end term1;
+architecture LogicFunc of term1 is
+begin
+	t1 <= not a and c;
+end architecture LogicFunc;
+
+library ieee;
+use ieee.std_logic_1164.all;
+entity term2 is
+	port (a : in std_logic;
+			c : in std_logic;
+			t2 : out std_logic);
+end term2;
+architecture LogicFunc of term2 is
+begin
+	t2 <= a and not c;
+end architecture LogicFunc;
+
+library ieee;
+use ieee.std_logic_1164.all;
+entity term3 is
+	port (b : in std_logic;
+			c : in std_logic;
+			t3 : out std_logic);
+end term3;
+architecture LogicFunc of term3 is
+begin
+	t3 <= b and c;
+end architecture LogicFunc;
