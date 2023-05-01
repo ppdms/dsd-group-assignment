@@ -1,0 +1,61 @@
+|adder
+cin => fulladder1:stage0.cin
+x3 => fulladder1:stage3.a
+x2 => fulladder1:stage2.a
+x1 => fulladder1:stage1.a
+x0 => fulladder1:stage0.a
+y3 => fulladder1:stage3.b
+y2 => fulladder1:stage2.b
+y1 => fulladder1:stage1.b
+y0 => fulladder1:stage0.b
+s3 <= fulladder1:stage3.s
+s2 <= fulladder1:stage2.s
+s1 <= fulladder1:stage1.s
+s0 <= fulladder1:stage0.s
+cout <= fulladder1:stage3.cout
+
+
+|adder|fulladder1:stage0
+cin => s.IN1
+cin => cout.IN1
+a => s.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adder|fulladder1:stage1
+cin => s.IN1
+cin => cout.IN1
+a => s.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adder|fulladder1:stage2
+cin => s.IN1
+cin => cout.IN1
+a => s.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adder|fulladder1:stage3
+cin => s.IN1
+cin => cout.IN1
+a => s.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
