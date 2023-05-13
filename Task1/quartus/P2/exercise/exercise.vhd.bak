@@ -1,0 +1,13 @@
+library ieee;
+use ieee.std_logic.all;
+
+entity exercise is
+	port (x1, x2, x3, x4: in std_logic;
+			f: out std_logic);
+end exercise;
+
+architecture solve of exercise is
+begin
+	f <= (x1 and x3 and x4) or (not x1 and x3 and not x4) or (x1 and not x3 and not x4) or (not x1 and x2 and not x3 and x4);
+end solve;
+	
