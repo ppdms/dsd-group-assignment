@@ -16,8 +16,8 @@ architecture beh_alu of alu is
 	signal Aout, Bout : std_logic;
 	signal w0, w1, w2, w3: std_logic;
 begin
-	mulA: mul_X_Xinv port map (a, s(3), Aout);
-	mulB: mul_X_Xinv port map (b, s(2), Bout);
+	mulA: mul_X_Xinv port map (a, s(0), Aout);
+	mulB: mul_X_Xinv port map (b, s(1), Bout);
 	AND_gate: and_2 port map (Aout, Bout, w0);
 	OR_gate: or_2 port map (Aout, Bout, w1);
 	XOR_gate: xor_2 port map (Aout, Bout, w2);
