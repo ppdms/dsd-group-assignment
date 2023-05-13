@@ -1,20 +1,27 @@
 library ieee;
 use ieee.std_logic_1164.all;
+
+library work;
 use work.my_components.all;
 
 --Create the ALU--
 entity alu is
 	port (cin, a, b: in std_logic;
-			s: in std_logic_vector(1 downto 0);
+			-- s bits: Ainvert(1) - Binvert(1) - mul4_s(2) 
+			s: in std_logic_vector(3 downto 0); 
 			cout, res: out std_logic);
 end alu;
 
 architecture beh_alu of alu is
-	signal w0, w1, w2: std_logic;
+	signal Aout, Bout : std_logic;
+	signal w0, w1, w2, w3: std_logic;
 begin
-	s1: and_2 port map (a, b, w0);
-	s2: or_2 port map (a, b, w1);
-	s3: adder1bit port map (cin, a, b, cout, w2);
-	s4: mul_4 port map (w0, w1, w2, s, res);
+	mulA: mul_X_Xinv port map (a, s(0), Aout);
+	mulB: mul_X_Xinv port map (b, s(1), Bout);
+	AND_gate: and_2 port map (Aout, Bout, w0);
+	OR_gate: or_2 port map (Aout, Bout, w1);
+	XOR_gate: xor_2 port map (Aout, Bout, w2);
+	Adder_1bit: adder1bit port map (cin, Aout, Bout, cout, w3);
+	Output_Mux: mul_4 port map (w0, w1, w2, w3, s(1 downto 0), res);
 end;
 	
