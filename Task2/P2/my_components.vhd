@@ -102,6 +102,38 @@ entity alu is
 end alu;
 
 architecture beh_alu of alu is
+--Placing all the components into the alu--
+	component mul_X_Xinv
+		port (X, sel: in std_logic;
+			Xout: out std_logic);
+	end component;
+	
+	component and_2
+		port (a, b: in std_logic;
+			f0: out std_logic);
+	end component;
+	
+	component or_2
+		port (a, b: in std_logic;
+			f1: out std_logic);
+	end component;
+	
+	component xor_2
+		port (a, b: in std_logic;
+			f3: out std_logic);
+	end component;
+	
+	component adder1bit
+		port (cin, a, b: in std_logic;
+			cout, sum: out std_logic);
+	end component;
+	
+	component mul_4
+		port (w0, w1, w2, w3: in std_logic;
+			s: in std_logic_vector(1 downto 0);
+			res: out std_logic);
+	end component;
+		
 	signal Aout, Bout : std_logic;
 	signal w0, w1, w2, w3: std_logic;
 begin
@@ -136,6 +168,7 @@ begin
 			when "100" => op <= "00"; Ainv <= '1'; Binv <= '1'; Cin <= '0';
 			when "101" => op <= "01"; Ainv <= '1'; Binv <= '1'; Cin <= '0';
 			when "110" => op <= "11"; Ainv <= '0'; Binv <= '0'; Cin <= '0';
+			when others => op <= "00"; Ainv <= '0'; Binv <= '0'; Cin <= '0';
 		end case;
 	end process;
 end;
