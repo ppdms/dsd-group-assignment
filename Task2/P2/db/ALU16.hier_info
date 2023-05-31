@@ -50,7 +50,7 @@ res[12] <= alu:A12.res
 res[13] <= alu:A13.res
 res[14] <= alu:A14.res
 res[15] <= alu:A15.res
-overflow <= comb.DB_MAX_OUTPUT_PORT_TYPE
+overflow <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |ALU16|cc:C0

@@ -1,9 +1,9 @@
-Analysis & Synthesis Status : Successful - Wed May 31 17:01:17 2023
+Analysis & Synthesis Status : Successful - Wed May 31 17:20:03 2023
 Quartus Prime Version : 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 Revision Name : ALU16
 Top-level Entity Name : ALU16
 Family : MAX V
-Total logic elements : 83
+Total logic elements : 84
 Total pins : 52
 Total virtual pins : 0
 UFM blocks : 0 / 1 ( 0 % )

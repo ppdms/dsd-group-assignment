@@ -34,6 +34,10 @@ begin
 	A13: alu port map (regularCout(12), a(13), b(13), s(3 downto 0), regularCout(13), res(13));
 	A14: alu port map (regularCout(13), a(14), b(14), s(3 downto 0), regularCout(14), res(14));
 	A15: alu port map (regularCout(14), a(15), b(15), s(3 downto 0), regularCout(15), res(15));
+	
+	with s(1 downto 0) select
+		overflow <= regularCout(15) XOR regularCout(14) WHEN "10",
+						'0' when others;
 end;	
 
 
