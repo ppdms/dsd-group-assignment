@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 d/home/ubuntu/QuartusProjects/Task2/P2/simulation/qsim
 Ealu16
-Z1 w1685444546
+Z1 w1685552497
 Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
 Z3 DPx4 maxv 14 maxv_atom_pack 0 22 `YXhbnPNiS:bB3zbmbF772
 Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
@@ -21,13 +21,13 @@ Z8 8ALU16.vho
 Z9 FALU16.vho
 l0
 L35
-V_2CUzQ:Kz?cmOfLeiL<_]0
-!s100 nXJB>O2F[EacVMTd;P66@0
+V4SPC2G6I@AaTZVRz32cS;1
+!s100 >R1Y_eLmFT:MdKh_lnVYU3
 Z10 OV;C;10.5b;63
 32
-Z11 !s110 1685444547
+Z11 !s110 1685552498
 !i10b 1
-Z12 !s108 1685444547.000000
+Z12 !s108 1685552498.000000
 Z13 !s90 -work|work|ALU16.vho|
 Z14 !s107 ALU16.vho|
 !i113 1
@@ -40,11 +40,11 @@ R4
 R5
 R6
 R7
-DEx4 work 5 alu16 0 22 _2CUzQ:Kz?cmOfLeiL<_]0
-l179
-L49
-VVFFRl4>Wf[CPAiPe4No2T2
-!s100 YoGgkH?@N@hAeA_ee;Cco2
+DEx4 work 5 alu16 0 22 4SPC2G6I@AaTZVRz32cS;1
+l150
+L48
+VeUGnRA6Uf028C3LYLQ35R2
+!s100 U1GUG6g]04lY=H[l[4oiN3
 R10
 32
 R11
@@ -56,7 +56,7 @@ R14
 R15
 R16
 Ealu16_vhd_vec_tst
-Z17 w1685444545
+Z17 w1685552496
 R6
 R7
 R0
@@ -79,11 +79,11 @@ R16
 Aalu16_arch
 R6
 R7
-DEx4 work 17 alu16_vhd_vec_tst 0 22 7TYPZ5TZR]Km=mbLoR<N?0
-l53
+Z22 DEx4 work 17 alu16_vhd_vec_tst 0 22 7TYPZ5TZR]Km=mbLoR<N?0
+l51
 L34
-V@IWiMo4SIhU;?;_4BkFN30
-!s100 @a@BIeNG5:8eGNl5VdM;d0
+Z23 VVD2MOmK>NU;cU2Ra?eIU:2
+Z24 !s100 WKcmNY76PH:0DX;ITgIdG2
 R10
 32
 R11

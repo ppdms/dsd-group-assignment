@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ALU16
-Tue May 30 10:57:30 2023
+Wed May 31 17:01:17 2023
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -14,23 +14,9 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Port Connectivity Checks: "alu:A15"
- 10. Port Connectivity Checks: "cc:C15"
- 11. Port Connectivity Checks: "cc:C14"
- 12. Port Connectivity Checks: "cc:C13"
- 13. Port Connectivity Checks: "cc:C12"
- 14. Port Connectivity Checks: "cc:C11"
- 15. Port Connectivity Checks: "cc:C10"
- 16. Port Connectivity Checks: "cc:C9"
- 17. Port Connectivity Checks: "cc:C8"
- 18. Port Connectivity Checks: "cc:C7"
- 19. Port Connectivity Checks: "cc:C6"
- 20. Port Connectivity Checks: "cc:C5"
- 21. Port Connectivity Checks: "cc:C4"
- 22. Port Connectivity Checks: "cc:C3"
- 23. Port Connectivity Checks: "cc:C2"
- 24. Port Connectivity Checks: "cc:C1"
- 25. Analysis & Synthesis Messages
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Port Connectivity Checks: "alu:A15"
+ 11. Analysis & Synthesis Messages
 
 
 
@@ -57,13 +43,13 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Tue May 30 10:57:30 2023       ;
+; Analysis & Synthesis Status ; Successful - Wed May 31 17:01:17 2023       ;
 ; Quartus Prime Version       ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name               ; ALU16                                       ;
 ; Top-level Entity Name       ; ALU16                                       ;
 ; Family                      ; MAX V                                       ;
-; Total logic elements        ; 110                                         ;
-; Total pins                  ; 98                                          ;
+; Total logic elements        ; 83                                          ;
+; Total pins                  ; 52                                          ;
 ; Total virtual pins          ; 0                                           ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
 +-----------------------------+---------------------------------------------+
@@ -165,38 +151,38 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+-----------------+---------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary               ;
-+---------------------------------------------+-------------+
-; Resource                                    ; Usage       ;
-+---------------------------------------------+-------------+
-; Total logic elements                        ; 110         ;
-;     -- Combinational with no register       ; 110         ;
-;     -- Register only                        ; 0           ;
-;     -- Combinational with a register        ; 0           ;
-;                                             ;             ;
-; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 78          ;
-;     -- 3 input functions                    ; 32          ;
-;     -- 2 input functions                    ; 0           ;
-;     -- 1 input functions                    ; 0           ;
-;     -- 0 input functions                    ; 0           ;
-;                                             ;             ;
-; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 110         ;
-;     -- arithmetic mode                      ; 0           ;
-;     -- qfbk mode                            ; 0           ;
-;     -- register cascade mode                ; 0           ;
-;     -- synchronous clear/load mode          ; 0           ;
-;     -- asynchronous clear/load mode         ; 0           ;
-;                                             ;             ;
-; Total registers                             ; 0           ;
-; I/O pins                                    ; 98          ;
-; Maximum fan-out node                        ; control[46] ;
-; Maximum fan-out                             ; 5           ;
-; Total fan-out                               ; 424         ;
-; Average fan-out                             ; 2.04        ;
-+---------------------------------------------+-------------+
++----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary              ;
++---------------------------------------------+------------+
+; Resource                                    ; Usage      ;
++---------------------------------------------+------------+
+; Total logic elements                        ; 83         ;
+;     -- Combinational with no register       ; 83         ;
+;     -- Register only                        ; 0          ;
+;     -- Combinational with a register        ; 0          ;
+;                                             ;            ;
+; Logic element usage by number of LUT inputs ;            ;
+;     -- 4 input functions                    ; 49         ;
+;     -- 3 input functions                    ; 34         ;
+;     -- 2 input functions                    ; 0          ;
+;     -- 1 input functions                    ; 0          ;
+;     -- 0 input functions                    ; 0          ;
+;                                             ;            ;
+; Logic elements by mode                      ;            ;
+;     -- normal mode                          ; 83         ;
+;     -- arithmetic mode                      ; 0          ;
+;     -- qfbk mode                            ; 0          ;
+;     -- register cascade mode                ; 0          ;
+;     -- synchronous clear/load mode          ; 0          ;
+;     -- asynchronous clear/load mode         ; 0          ;
+;                                             ;            ;
+; Total registers                             ; 0          ;
+; I/O pins                                    ; 52         ;
+; Maximum fan-out node                        ; control[1] ;
+; Maximum fan-out                             ; 38         ;
+; Total fan-out                               ; 314        ;
+; Average fan-out                             ; 2.33       ;
++---------------------------------------------+------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -204,71 +190,69 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------+-------------+--------------+
 ; Compilation Hierarchy Node   ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                 ; Entity Name ; Library Name ;
 +------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------+-------------+--------------+
-; |ALU16                       ; 110 (0)     ; 0            ; 0          ; 98   ; 0            ; 110 (0)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16                              ; ALU16       ; work         ;
+; |ALU16                       ; 83 (0)      ; 0            ; 0          ; 52   ; 0            ; 83 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16                              ; ALU16       ; work         ;
 ;    |alu:A0|                  ; 5 (0)       ; 0            ; 0          ; 0    ; 0            ; 5 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A0                       ; alu         ; work         ;
 ;       |adder1bit:Adder_1bit| ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A0|adder1bit:Adder_1bit  ; adder1bit   ; work         ;
 ;       |mul_4:Output_Mux|     ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A0|mul_4:Output_Mux      ; mul_4       ; work         ;
-;    |alu:A10|                 ; 6 (0)       ; 0            ; 0          ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A10                      ; alu         ; work         ;
+;    |alu:A10|                 ; 5 (0)       ; 0            ; 0          ; 0    ; 0            ; 5 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A10                      ; alu         ; work         ;
 ;       |adder1bit:Adder_1bit| ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A10|adder1bit:Adder_1bit ; adder1bit   ; work         ;
-;       |mul_4:Output_Mux|     ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A10|mul_4:Output_Mux     ; mul_4       ; work         ;
-;    |alu:A11|                 ; 6 (0)       ; 0            ; 0          ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A11                      ; alu         ; work         ;
+;       |mul_4:Output_Mux|     ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A10|mul_4:Output_Mux     ; mul_4       ; work         ;
+;       |mul_X_Xinv:mulB|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A10|mul_X_Xinv:mulB      ; mul_X_Xinv  ; work         ;
+;    |alu:A11|                 ; 5 (0)       ; 0            ; 0          ; 0    ; 0            ; 5 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A11                      ; alu         ; work         ;
 ;       |adder1bit:Adder_1bit| ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A11|adder1bit:Adder_1bit ; adder1bit   ; work         ;
-;       |mul_4:Output_Mux|     ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A11|mul_4:Output_Mux     ; mul_4       ; work         ;
-;    |alu:A12|                 ; 6 (0)       ; 0            ; 0          ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A12                      ; alu         ; work         ;
+;       |mul_4:Output_Mux|     ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A11|mul_4:Output_Mux     ; mul_4       ; work         ;
+;       |mul_X_Xinv:mulB|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A11|mul_X_Xinv:mulB      ; mul_X_Xinv  ; work         ;
+;    |alu:A12|                 ; 5 (0)       ; 0            ; 0          ; 0    ; 0            ; 5 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A12                      ; alu         ; work         ;
 ;       |adder1bit:Adder_1bit| ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A12|adder1bit:Adder_1bit ; adder1bit   ; work         ;
-;       |mul_4:Output_Mux|     ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A12|mul_4:Output_Mux     ; mul_4       ; work         ;
-;    |alu:A13|                 ; 6 (0)       ; 0            ; 0          ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A13                      ; alu         ; work         ;
+;       |mul_4:Output_Mux|     ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A12|mul_4:Output_Mux     ; mul_4       ; work         ;
+;       |mul_X_Xinv:mulB|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A12|mul_X_Xinv:mulB      ; mul_X_Xinv  ; work         ;
+;    |alu:A13|                 ; 5 (0)       ; 0            ; 0          ; 0    ; 0            ; 5 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A13                      ; alu         ; work         ;
 ;       |adder1bit:Adder_1bit| ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A13|adder1bit:Adder_1bit ; adder1bit   ; work         ;
-;       |mul_4:Output_Mux|     ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A13|mul_4:Output_Mux     ; mul_4       ; work         ;
-;    |alu:A14|                 ; 6 (0)       ; 0            ; 0          ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A14                      ; alu         ; work         ;
+;       |mul_4:Output_Mux|     ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A13|mul_4:Output_Mux     ; mul_4       ; work         ;
+;       |mul_X_Xinv:mulB|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A13|mul_X_Xinv:mulB      ; mul_X_Xinv  ; work         ;
+;    |alu:A14|                 ; 5 (0)       ; 0            ; 0          ; 0    ; 0            ; 5 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A14                      ; alu         ; work         ;
 ;       |adder1bit:Adder_1bit| ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A14|adder1bit:Adder_1bit ; adder1bit   ; work         ;
-;       |mul_4:Output_Mux|     ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A14|mul_4:Output_Mux     ; mul_4       ; work         ;
-;    |alu:A15|                 ; 6 (0)       ; 0            ; 0          ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A15                      ; alu         ; work         ;
-;       |adder1bit:Adder_1bit| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A15|adder1bit:Adder_1bit ; adder1bit   ; work         ;
-;       |mul_4:Output_Mux|     ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A15|mul_4:Output_Mux     ; mul_4       ; work         ;
-;       |mul_X_Xinv:mulB|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A15|mul_X_Xinv:mulB      ; mul_X_Xinv  ; work         ;
-;    |alu:A1|                  ; 6 (0)       ; 0            ; 0          ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A1                       ; alu         ; work         ;
+;       |mul_4:Output_Mux|     ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A14|mul_4:Output_Mux     ; mul_4       ; work         ;
+;       |mul_X_Xinv:mulB|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A14|mul_X_Xinv:mulB      ; mul_X_Xinv  ; work         ;
+;    |alu:A15|                 ; 5 (0)       ; 0            ; 0          ; 0    ; 0            ; 5 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A15                      ; alu         ; work         ;
+;       |mul_4:Output_Mux|     ; 5 (5)       ; 0            ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A15|mul_4:Output_Mux     ; mul_4       ; work         ;
+;    |alu:A1|                  ; 5 (0)       ; 0            ; 0          ; 0    ; 0            ; 5 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A1                       ; alu         ; work         ;
 ;       |adder1bit:Adder_1bit| ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A1|adder1bit:Adder_1bit  ; adder1bit   ; work         ;
-;       |mul_4:Output_Mux|     ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A1|mul_4:Output_Mux      ; mul_4       ; work         ;
-;    |alu:A2|                  ; 6 (0)       ; 0            ; 0          ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A2                       ; alu         ; work         ;
+;       |mul_4:Output_Mux|     ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A1|mul_4:Output_Mux      ; mul_4       ; work         ;
+;       |mul_X_Xinv:mulB|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A1|mul_X_Xinv:mulB       ; mul_X_Xinv  ; work         ;
+;    |alu:A2|                  ; 5 (0)       ; 0            ; 0          ; 0    ; 0            ; 5 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A2                       ; alu         ; work         ;
 ;       |adder1bit:Adder_1bit| ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A2|adder1bit:Adder_1bit  ; adder1bit   ; work         ;
-;       |mul_4:Output_Mux|     ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A2|mul_4:Output_Mux      ; mul_4       ; work         ;
-;    |alu:A3|                  ; 6 (0)       ; 0            ; 0          ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A3                       ; alu         ; work         ;
+;       |mul_4:Output_Mux|     ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A2|mul_4:Output_Mux      ; mul_4       ; work         ;
+;       |mul_X_Xinv:mulB|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A2|mul_X_Xinv:mulB       ; mul_X_Xinv  ; work         ;
+;    |alu:A3|                  ; 5 (0)       ; 0            ; 0          ; 0    ; 0            ; 5 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A3                       ; alu         ; work         ;
 ;       |adder1bit:Adder_1bit| ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A3|adder1bit:Adder_1bit  ; adder1bit   ; work         ;
-;       |mul_4:Output_Mux|     ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A3|mul_4:Output_Mux      ; mul_4       ; work         ;
-;    |alu:A4|                  ; 6 (0)       ; 0            ; 0          ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A4                       ; alu         ; work         ;
+;       |mul_4:Output_Mux|     ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A3|mul_4:Output_Mux      ; mul_4       ; work         ;
+;       |mul_X_Xinv:mulB|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A3|mul_X_Xinv:mulB       ; mul_X_Xinv  ; work         ;
+;    |alu:A4|                  ; 5 (0)       ; 0            ; 0          ; 0    ; 0            ; 5 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A4                       ; alu         ; work         ;
 ;       |adder1bit:Adder_1bit| ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A4|adder1bit:Adder_1bit  ; adder1bit   ; work         ;
-;       |mul_4:Output_Mux|     ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A4|mul_4:Output_Mux      ; mul_4       ; work         ;
-;    |alu:A5|                  ; 6 (0)       ; 0            ; 0          ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A5                       ; alu         ; work         ;
+;       |mul_4:Output_Mux|     ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A4|mul_4:Output_Mux      ; mul_4       ; work         ;
+;       |mul_X_Xinv:mulB|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A4|mul_X_Xinv:mulB       ; mul_X_Xinv  ; work         ;
+;    |alu:A5|                  ; 5 (0)       ; 0            ; 0          ; 0    ; 0            ; 5 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A5                       ; alu         ; work         ;
 ;       |adder1bit:Adder_1bit| ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A5|adder1bit:Adder_1bit  ; adder1bit   ; work         ;
-;       |mul_4:Output_Mux|     ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A5|mul_4:Output_Mux      ; mul_4       ; work         ;
-;    |alu:A6|                  ; 6 (0)       ; 0            ; 0          ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A6                       ; alu         ; work         ;
+;       |mul_4:Output_Mux|     ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A5|mul_4:Output_Mux      ; mul_4       ; work         ;
+;       |mul_X_Xinv:mulB|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A5|mul_X_Xinv:mulB       ; mul_X_Xinv  ; work         ;
+;    |alu:A6|                  ; 5 (0)       ; 0            ; 0          ; 0    ; 0            ; 5 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A6                       ; alu         ; work         ;
 ;       |adder1bit:Adder_1bit| ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A6|adder1bit:Adder_1bit  ; adder1bit   ; work         ;
-;       |mul_4:Output_Mux|     ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A6|mul_4:Output_Mux      ; mul_4       ; work         ;
-;    |alu:A7|                  ; 6 (0)       ; 0            ; 0          ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A7                       ; alu         ; work         ;
+;       |mul_4:Output_Mux|     ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A6|mul_4:Output_Mux      ; mul_4       ; work         ;
+;       |mul_X_Xinv:mulB|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A6|mul_X_Xinv:mulB       ; mul_X_Xinv  ; work         ;
+;    |alu:A7|                  ; 5 (0)       ; 0            ; 0          ; 0    ; 0            ; 5 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A7                       ; alu         ; work         ;
 ;       |adder1bit:Adder_1bit| ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A7|adder1bit:Adder_1bit  ; adder1bit   ; work         ;
-;       |mul_4:Output_Mux|     ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A7|mul_4:Output_Mux      ; mul_4       ; work         ;
-;    |alu:A8|                  ; 6 (0)       ; 0            ; 0          ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A8                       ; alu         ; work         ;
+;       |mul_4:Output_Mux|     ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A7|mul_4:Output_Mux      ; mul_4       ; work         ;
+;       |mul_X_Xinv:mulB|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A7|mul_X_Xinv:mulB       ; mul_X_Xinv  ; work         ;
+;    |alu:A8|                  ; 5 (0)       ; 0            ; 0          ; 0    ; 0            ; 5 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A8                       ; alu         ; work         ;
 ;       |adder1bit:Adder_1bit| ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A8|adder1bit:Adder_1bit  ; adder1bit   ; work         ;
-;       |mul_4:Output_Mux|     ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A8|mul_4:Output_Mux      ; mul_4       ; work         ;
-;    |alu:A9|                  ; 6 (0)       ; 0            ; 0          ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A9                       ; alu         ; work         ;
+;       |mul_4:Output_Mux|     ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A8|mul_4:Output_Mux      ; mul_4       ; work         ;
+;       |mul_X_Xinv:mulB|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A8|mul_X_Xinv:mulB       ; mul_X_Xinv  ; work         ;
+;    |alu:A9|                  ; 5 (0)       ; 0            ; 0          ; 0    ; 0            ; 5 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A9                       ; alu         ; work         ;
 ;       |adder1bit:Adder_1bit| ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A9|adder1bit:Adder_1bit  ; adder1bit   ; work         ;
-;       |mul_4:Output_Mux|     ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A9|mul_4:Output_Mux      ; mul_4       ; work         ;
-;    |cc:C10|                  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|cc:C10                       ; cc          ; work         ;
-;    |cc:C11|                  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|cc:C11                       ; cc          ; work         ;
-;    |cc:C12|                  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|cc:C12                       ; cc          ; work         ;
-;    |cc:C13|                  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|cc:C13                       ; cc          ; work         ;
-;    |cc:C14|                  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|cc:C14                       ; cc          ; work         ;
-;    |cc:C15|                  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|cc:C15                       ; cc          ; work         ;
-;    |cc:C1|                   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|cc:C1                        ; cc          ; work         ;
-;    |cc:C2|                   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|cc:C2                        ; cc          ; work         ;
-;    |cc:C3|                   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|cc:C3                        ; cc          ; work         ;
-;    |cc:C4|                   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|cc:C4                        ; cc          ; work         ;
-;    |cc:C5|                   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|cc:C5                        ; cc          ; work         ;
-;    |cc:C6|                   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|cc:C6                        ; cc          ; work         ;
-;    |cc:C7|                   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|cc:C7                        ; cc          ; work         ;
-;    |cc:C8|                   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|cc:C8                        ; cc          ; work         ;
-;    |cc:C9|                   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|cc:C9                        ; cc          ; work         ;
+;       |mul_4:Output_Mux|     ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A9|mul_4:Output_Mux      ; mul_4       ; work         ;
+;       |mul_X_Xinv:mulB|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|alu:A9|mul_X_Xinv:mulB       ; mul_X_Xinv  ; work         ;
+;    |cc:C0|                   ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ALU16|cc:C0                        ; cc          ; work         ;
 +------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -288,6 +272,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |ALU16|alu:A11|mul_4:Output_Mux|Mux0 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
+
+
 +----------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "alu:A15"                                                                            ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -297,153 +290,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "cc:C15"                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; cin  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "cc:C14"                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; cin  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "cc:C13"                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; cin  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "cc:C12"                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; cin  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "cc:C11"                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; cin  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "cc:C10"                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; cin  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "cc:C9"                                                                              ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; cin  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "cc:C8"                                                                              ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; cin  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "cc:C7"                                                                              ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; cin  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "cc:C6"                                                                              ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; cin  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "cc:C5"                                                                              ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; cin  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "cc:C4"                                                                              ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; cin  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "cc:C3"                                                                              ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; cin  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "cc:C2"                                                                              ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; cin  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "cc:C1"                                                                              ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; cin  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Tue May 30 10:57:19 2023
+    Info: Processing started: Wed May 31 17:01:05 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off P2 -c ALU16
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file ALU16.vhd
-    Info (12022): Found design unit 1: ALU16-behofALU16 File: /home/ubuntu/QuartusProjects/Task2/P2/ALU16.vhd Line: 16
+    Info (12022): Found design unit 1: ALU16-behofALU16 File: /home/ubuntu/QuartusProjects/Task2/P2/ALU16.vhd Line: 14
     Info (12023): Found entity 1: ALU16 File: /home/ubuntu/QuartusProjects/Task2/P2/ALU16.vhd Line: 7
 Info (12021): Found 17 design units, including 8 entities, in source file my_components.vhd
     Info (12022): Found design unit 1: and_2-beh_and_2 File: /home/ubuntu/QuartusProjects/Task2/P2/my_components.vhd Line: 10
@@ -464,27 +322,25 @@ Info (12021): Found 17 design units, including 8 entities, in source file my_com
     Info (12023): Found entity 7: alu File: /home/ubuntu/QuartusProjects/Task2/P2/my_components.vhd Line: 97
     Info (12023): Found entity 8: cc File: /home/ubuntu/QuartusProjects/Task2/P2/my_components.vhd Line: 153
 Info (12127): Elaborating entity "ALU16" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at ALU16.vhd(13): used implicit default value for signal "cout" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/ubuntu/QuartusProjects/Task2/P2/ALU16.vhd Line: 13
-Warning (10541): VHDL Signal Declaration warning at ALU16.vhd(13): used implicit default value for signal "overflow" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/ubuntu/QuartusProjects/Task2/P2/ALU16.vhd Line: 13
-Info (12128): Elaborating entity "cc" for hierarchy "cc:C0" File: /home/ubuntu/QuartusProjects/Task2/P2/ALU16.vhd Line: 21
-Info (12128): Elaborating entity "alu" for hierarchy "alu:A0" File: /home/ubuntu/QuartusProjects/Task2/P2/ALU16.vhd Line: 22
+Warning (10541): VHDL Signal Declaration warning at ALU16.vhd(11): used implicit default value for signal "overflow" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/ubuntu/QuartusProjects/Task2/P2/ALU16.vhd Line: 11
+Info (12128): Elaborating entity "cc" for hierarchy "cc:C0" File: /home/ubuntu/QuartusProjects/Task2/P2/ALU16.vhd Line: 19
+Info (12128): Elaborating entity "alu" for hierarchy "alu:A0" File: /home/ubuntu/QuartusProjects/Task2/P2/ALU16.vhd Line: 20
 Info (12128): Elaborating entity "mul_X_Xinv" for hierarchy "alu:A0|mul_X_Xinv:mulA" File: /home/ubuntu/QuartusProjects/Task2/P2/my_components.vhd Line: 140
 Info (12128): Elaborating entity "and_2" for hierarchy "alu:A0|and_2:AND_gate" File: /home/ubuntu/QuartusProjects/Task2/P2/my_components.vhd Line: 142
 Info (12128): Elaborating entity "or_2" for hierarchy "alu:A0|or_2:OR_gate" File: /home/ubuntu/QuartusProjects/Task2/P2/my_components.vhd Line: 143
-Info (12128): Elaborating entity "xor_2" for hierarchy "alu:A0|xor_2:XOR_gate" File: /home/ubuntu/QuartusProjects/Task2/P2/my_components.vhd Line: 144
-Info (12128): Elaborating entity "adder1bit" for hierarchy "alu:A0|adder1bit:Adder_1bit" File: /home/ubuntu/QuartusProjects/Task2/P2/my_components.vhd Line: 145
+Info (12128): Elaborating entity "adder1bit" for hierarchy "alu:A0|adder1bit:Adder_1bit" File: /home/ubuntu/QuartusProjects/Task2/P2/my_components.vhd Line: 144
+Info (12128): Elaborating entity "xor_2" for hierarchy "alu:A0|xor_2:XOR_gate" File: /home/ubuntu/QuartusProjects/Task2/P2/my_components.vhd Line: 145
 Info (12128): Elaborating entity "mul_4" for hierarchy "alu:A0|mul_4:Output_Mux" File: /home/ubuntu/QuartusProjects/Task2/P2/my_components.vhd Line: 146
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "cout" is stuck at GND File: /home/ubuntu/QuartusProjects/Task2/P2/ALU16.vhd Line: 13
-    Warning (13410): Pin "overflow" is stuck at GND File: /home/ubuntu/QuartusProjects/Task2/P2/ALU16.vhd Line: 13
-Info (21057): Implemented 208 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 80 input pins
-    Info (21059): Implemented 18 output pins
-    Info (21061): Implemented 110 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 898 megabytes
-    Info: Processing ended: Tue May 30 10:57:30 2023
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:15
+    Warning (13410): Pin "overflow" is stuck at GND File: /home/ubuntu/QuartusProjects/Task2/P2/ALU16.vhd Line: 11
+Info (21057): Implemented 135 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 35 input pins
+    Info (21059): Implemented 17 output pins
+    Info (21061): Implemented 83 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 899 megabytes
+    Info: Processing ended: Wed May 31 17:01:17 2023
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:16
 
 
