@@ -20,8 +20,8 @@ begin
 	mulB: mul_X_Xinv port map (b, s(2), Bout);
 	AND_gate: and_2 port map (Aout, Bout, w0);
 	OR_gate: or_2 port map (Aout, Bout, w1);
-	XOR_gate: xor_2 port map (Aout, Bout, w2);
-	Adder_1bit: adder1bit port map (cin, Aout, Bout, cout, w3);
-	Output_Mux: mul_4 port map (w0, w1, w2, w3, s(1 downto 0), res);
+	Adder_1bit: adder1bit port map (cin, Aout, Bout, cout, w2);
+	XOR_gate: xor_2 port map (Aout, Bout, w3);
+        Output_Mux: mul_4 port map (w0, w1, w2, w3, s(1 downto 0), res);
 end;
 	
