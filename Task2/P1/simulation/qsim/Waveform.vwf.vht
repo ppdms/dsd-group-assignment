@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "05/13/2023 13:19:27"
+-- Generated on "06/07/2023 16:52:46"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          alu
 -- 
@@ -39,7 +39,7 @@ SIGNAL b : STD_LOGIC;
 SIGNAL cin : STD_LOGIC;
 SIGNAL cout : STD_LOGIC;
 SIGNAL res : STD_LOGIC;
-SIGNAL s : STD_LOGIC_VECTOR(1 DOWNTO 0);
+SIGNAL s : STD_LOGIC_VECTOR(0 TO 3);
 COMPONENT alu
 	PORT (
 	a : IN STD_LOGIC;
@@ -47,7 +47,7 @@ COMPONENT alu
 	cin : IN STD_LOGIC;
 	cout : OUT STD_LOGIC;
 	res : OUT STD_LOGIC;
-	s : IN STD_LOGIC_VECTOR(1 DOWNTO 0)
+	s : IN STD_LOGIC_VECTOR(0 TO 3)
 	);
 END COMPONENT;
 BEGIN
@@ -65,24 +65,13 @@ BEGIN
 -- a
 t_prcs_a: PROCESS
 BEGIN
-LOOP
-	a <= '0';
-	WAIT FOR 80000 ps;
 	a <= '1';
-	WAIT FOR 80000 ps;
-	IF (NOW >= 160000 ps) THEN WAIT; END IF;
-END LOOP;
+WAIT;
 END PROCESS t_prcs_a;
 
 -- b
 t_prcs_b: PROCESS
 BEGIN
-	b <= '0';
-	WAIT FOR 40000 ps;
-	b <= '1';
-	WAIT FOR 40000 ps;
-	b <= '0';
-	WAIT FOR 40000 ps;
 	b <= '1';
 WAIT;
 END PROCESS t_prcs_b;
@@ -90,14 +79,24 @@ END PROCESS t_prcs_b;
 -- cin
 t_prcs_cin: PROCESS
 BEGIN
-	cin <= '1';
+	cin <= '0';
 WAIT;
 END PROCESS t_prcs_cin;
+-- s[3]
+t_prcs_s_3: PROCESS
+BEGIN
+	s(3) <= '0';
+WAIT;
+END PROCESS t_prcs_s_3;
+-- s[2]
+t_prcs_s_2: PROCESS
+BEGIN
+	s(2) <= '0';
+WAIT;
+END PROCESS t_prcs_s_2;
 -- s[1]
 t_prcs_s_1: PROCESS
 BEGIN
-	s(1) <= '0';
-	WAIT FOR 80000 ps;
 	s(1) <= '1';
 WAIT;
 END PROCESS t_prcs_s_1;
@@ -105,12 +104,6 @@ END PROCESS t_prcs_s_1;
 t_prcs_s_0: PROCESS
 BEGIN
 	s(0) <= '0';
-	WAIT FOR 40000 ps;
-	s(0) <= '1';
-	WAIT FOR 40000 ps;
-	s(0) <= '0';
-	WAIT FOR 40000 ps;
-	s(0) <= '1';
 WAIT;
 END PROCESS t_prcs_s_0;
 END alu_arch;

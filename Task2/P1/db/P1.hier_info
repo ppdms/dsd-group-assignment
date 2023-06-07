@@ -2,14 +2,12 @@
 cin => adder1bit:Adder_1bit.cin
 a => mul_X_Xinv:mulA.X
 b => mul_X_Xinv:mulB.X
-s[0] => mul_X_Xinv:mulA.sel
-s[0] => mul_4:Output_Mux.s[0]
+s[3] => mul_4:Output_Mux.s[0]
+s[2] => mul_4:Output_Mux.s[1]
 s[1] => mul_X_Xinv:mulB.sel
-s[1] => mul_4:Output_Mux.s[1]
-s[2] => ~NO_FANOUT~
-s[3] => ~NO_FANOUT~
-cout << adder1bit:Adder_1bit.cout
-res << mul_4:Output_Mux.res
+s[0] => mul_X_Xinv:mulA.sel
+cout <= adder1bit:Adder_1bit.cout
+res <= mul_4:Output_Mux.res
 
 
 |alu|mul_X_Xinv:mulA
@@ -38,12 +36,6 @@ b => f1.IN1
 f1 <= f1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|alu|xor_2:XOR_gate
-a => f3.IN0
-b => f3.IN1
-f3 <= f3.DB_MAX_OUTPUT_PORT_TYPE
-
-
 |alu|adder1bit:Adder_1bit
 cin => cout.IN0
 cin => cout.IN0
@@ -63,6 +55,12 @@ b => sum.IN1
 b => sum.IN1
 cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
 sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|alu|xor_2:XOR_gate
+a => f3.IN0
+b => f3.IN1
+f3 <= f3.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |alu|mul_4:Output_Mux
