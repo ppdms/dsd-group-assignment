@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "06/07/2023 16:52:46"
+-- Generated on "06/08/2023 12:53:01"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          alu
 -- 
@@ -65,45 +65,80 @@ BEGIN
 -- a
 t_prcs_a: PROCESS
 BEGIN
+LOOP
+	a <= '0';
+	WAIT FOR 1280000 ps;
 	a <= '1';
-WAIT;
+	WAIT FOR 1280000 ps;
+	IF (NOW >= 2560000 ps) THEN WAIT; END IF;
+END LOOP;
 END PROCESS t_prcs_a;
 
 -- b
 t_prcs_b: PROCESS
 BEGIN
+LOOP
+	b <= '0';
+	WAIT FOR 640000 ps;
 	b <= '1';
-WAIT;
+	WAIT FOR 640000 ps;
+	IF (NOW >= 2560000 ps) THEN WAIT; END IF;
+END LOOP;
 END PROCESS t_prcs_b;
 
 -- cin
 t_prcs_cin: PROCESS
 BEGIN
+LOOP
 	cin <= '0';
-WAIT;
+	WAIT FOR 320000 ps;
+	cin <= '1';
+	WAIT FOR 320000 ps;
+	IF (NOW >= 2560000 ps) THEN WAIT; END IF;
+END LOOP;
 END PROCESS t_prcs_cin;
 -- s[3]
 t_prcs_s_3: PROCESS
 BEGIN
+LOOP
 	s(3) <= '0';
-WAIT;
+	WAIT FOR 160000 ps;
+	s(3) <= '1';
+	WAIT FOR 160000 ps;
+	IF (NOW >= 2560000 ps) THEN WAIT; END IF;
+END LOOP;
 END PROCESS t_prcs_s_3;
 -- s[2]
 t_prcs_s_2: PROCESS
 BEGIN
+LOOP
 	s(2) <= '0';
-WAIT;
+	WAIT FOR 80000 ps;
+	s(2) <= '1';
+	WAIT FOR 80000 ps;
+	IF (NOW >= 2560000 ps) THEN WAIT; END IF;
+END LOOP;
 END PROCESS t_prcs_s_2;
 -- s[1]
 t_prcs_s_1: PROCESS
 BEGIN
+LOOP
+	s(1) <= '0';
+	WAIT FOR 40000 ps;
 	s(1) <= '1';
-WAIT;
+	WAIT FOR 40000 ps;
+	IF (NOW >= 2560000 ps) THEN WAIT; END IF;
+END LOOP;
 END PROCESS t_prcs_s_1;
 -- s[0]
 t_prcs_s_0: PROCESS
 BEGIN
+LOOP
 	s(0) <= '0';
-WAIT;
+	WAIT FOR 20000 ps;
+	s(0) <= '1';
+	WAIT FOR 20000 ps;
+	IF (NOW >= 2560000 ps) THEN WAIT; END IF;
+END LOOP;
 END PROCESS t_prcs_s_0;
 END alu_arch;

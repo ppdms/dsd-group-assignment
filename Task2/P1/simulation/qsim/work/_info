@@ -9,7 +9,7 @@ z2
 cModel Technology
 dC:/Users/matsa/OneDrive/Desktop/Quartus2ndProject/simulation/qsim
 Ealu
-Z0 w1686157111
+Z0 w1686228783
 Z1 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
 Z2 DPx4 maxv 14 maxv_atom_pack 0 22 `YXhbnPNiS:bB3zbmbF772
 Z3 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
@@ -25,9 +25,9 @@ Vgz76o4FKM6nm4KzTYGa:D0
 !s100 QEVC>=lk14O@3NjjV`;=o0
 Z10 OV;C;10.5b;63
 32
-Z11 !s110 1686157112
+Z11 !s110 1686228784
 !i10b 1
-Z12 !s108 1686157112.000000
+Z12 !s108 1686228784.000000
 Z13 !s90 -work|work|P1.vho|
 Z14 !s107 P1.vho|
 !i113 1
@@ -56,12 +56,12 @@ R14
 R15
 R16
 Ealu_vhd_vec_tst
-Z17 w1686157110
+Z17 w1686228781
 R5
 R6
 R7
-Z18 8Waveform2.vwf.vht
-Z19 FWaveform2.vwf.vht
+Z18 8Waveform.vwf.vht
+Z19 FWaveform.vwf.vht
 l0
 L32
 VS2RS630:XE9<F1mHB=VWL3
@@ -71,8 +71,8 @@ R10
 R11
 !i10b 1
 R12
-Z20 !s90 -work|work|Waveform2.vwf.vht|
-Z21 !s107 Waveform2.vwf.vht|
+Z20 !s90 -work|work|Waveform.vwf.vht|
+Z21 !s107 Waveform.vwf.vht|
 !i113 1
 R15
 R16
@@ -82,8 +82,8 @@ R6
 Z22 DEx4 work 15 alu_vhd_vec_tst 0 22 S2RS630:XE9<F1mHB=VWL3
 l53
 L34
-V^ZK^a3Y4jN=8RPaeXYd=h0
-!s100 <do<f]UHU_jklicLCh@5X1
+VIgnfd9HiSJig0e1J6D8`U1
+!s100 J6zaWDYRdM`EhUL6:HSKA2
 R10
 32
 R11

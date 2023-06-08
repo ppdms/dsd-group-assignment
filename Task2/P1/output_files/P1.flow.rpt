@@ -1,5 +1,5 @@
 Flow report for P1
-Wed Jun  7 16:58:31 2023
+Thu Jun  8 12:53:03 2023
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------+
 ; Flow Summary                                                        ;
 +-----------------------+---------------------------------------------+
-; Flow Status           ; Successful - Wed Jun  7 16:58:31 2023       ;
+; Flow Status           ; Successful - Thu Jun  8 12:53:03 2023       ;
 ; Quartus Prime Version ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name         ; P1                                          ;
 ; Top-level Entity Name ; alu                                         ;
@@ -108,6 +108,8 @@ https://fpgasoftware.intel.com/eula.
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 1000 MB             ; 00:00:00                           ;
 ; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 996 MB              ; 00:00:00                           ;
 ; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 1000 MB             ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 996 MB              ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 1000 MB             ; 00:00:00                           ;
 ; Total                ; 00:00:19     ; --                      ; --                  ; 00:00:18                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
@@ -121,6 +123,8 @@ https://fpgasoftware.intel.com/eula.
 ; Fitter               ; ip-172-31-5-186  ; Ubuntu 22.04.2 ; 22         ; x86_64         ;
 ; Assembler            ; ip-172-31-5-186  ; Ubuntu 22.04.2 ; 22         ; x86_64         ;
 ; Timing Analyzer      ; ip-172-31-5-186  ; Ubuntu 22.04.2 ; 22         ; x86_64         ;
+; EDA Netlist Writer   ; ip-172-31-5-186  ; Ubuntu 22.04.2 ; 22         ; x86_64         ;
+; EDA Netlist Writer   ; ip-172-31-5-186  ; Ubuntu 22.04.2 ; 22         ; x86_64         ;
 ; EDA Netlist Writer   ; ip-172-31-5-186  ; Ubuntu 22.04.2 ; 22         ; x86_64         ;
 ; EDA Netlist Writer   ; ip-172-31-5-186  ; Ubuntu 22.04.2 ; 22         ; x86_64         ;
 ; EDA Netlist Writer   ; ip-172-31-5-186  ; Ubuntu 22.04.2 ; 22         ; x86_64         ;
@@ -160,6 +164,8 @@ quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten
 quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off P1 -c P1 --vector_source=/home/ubuntu/QuartusProjects/Task2/P1/Waveform2.vwf --testbench_file=/home/ubuntu/QuartusProjects/Task2/P1/simulation/qsim/Waveform2.vwf.vht
 quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/ubuntu/QuartusProjects/Task2/P1/simulation/qsim/ P1 -c P1
 quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off P1 -c P1 --vector_source=/home/ubuntu/QuartusProjects/Task2/P1/Waveform2.vwf --testbench_file=/home/ubuntu/QuartusProjects/Task2/P1/simulation/qsim/Waveform2.vwf.vht
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/ubuntu/QuartusProjects/Task2/P1/simulation/qsim/ P1 -c P1
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off P1 -c P1 --vector_source=/home/ubuntu/QuartusProjects/Task2/P1/Waveform.vwf --testbench_file=/home/ubuntu/QuartusProjects/Task2/P1/simulation/qsim/Waveform.vwf.vht
 quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/ubuntu/QuartusProjects/Task2/P1/simulation/qsim/ P1 -c P1
 
 
